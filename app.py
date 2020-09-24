@@ -13,7 +13,8 @@ from textDetection import load_and_resize, detectTexts,readText,matchText
 
 app = Flask(__name__)
 
-tessdata_path = './tessdata'
+tessdata_path = os.environ['TESSDATA_PATH']
+# tessdata_path = './tessdata'
 
 @app.route('/')
 def index():
