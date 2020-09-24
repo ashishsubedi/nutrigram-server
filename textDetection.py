@@ -10,8 +10,12 @@ import re
 from fuzzywuzzy import fuzz
 
 from os import path
+import os
 
-tessdata_path = path.abspath('./tessdata')
+# tessdata_path = path.abspath('./tessdata')
+tessdata_path = os.environ['TESSDATA_PREFIX']
+if(not tessdata_path ):
+    tessdata_path = path.abspath('./tessdata')
 H = W = None
 rW = rH = None
 # Note: width and height should be multiple of 32
